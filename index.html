@@ -21,15 +21,20 @@
     </head>
 
     <body>
-        <script src="js/THREE.js"></script>
-        <script src="js/PointerLockControls.js"></script>
-        <script src="js/GLTFLoader.js"></script>
+        <script type="module">
+        import * as THREE from "/js/THREE.js"
+        </script>
+        <script type="module">
+        import * as THREE from "/js/PointerLockControls.js"
+        </script>
+        <script type="module">
+        import * as THREE from "/js/GLTFLoader.js"
+        </script>
         <button id=button1> press</button>
         <audio id="audio1" src="audio/procrastinator.wav"></audio>
 
         <script>
 
-            import * THREE as 'js/THREE.js';
             var scene=new THREE.Scene();
             var camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
 
