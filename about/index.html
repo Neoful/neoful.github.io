@@ -1,0 +1,138 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="../src/icon.png"/>
+    <title>Jenny Pham</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="preload">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</div> 
+
+
+  <header id="header">
+    <a></a>
+    <ul>
+        <li><a href="../index.html" class="logo"><img src="../src/icon.png" height="10"></a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about/index.html" class="active">About</a></li>
+        <li><a href="../works/index.html">Work</a></li>
+    </ul>
+    </header>
+
+<div class="slides">
+    <div class="slideshow-container">
+
+    <div class="mySlides fade">
+    <p>
+        <li><b style="color:white">Who Am I?</b><br>  As an IT Associate of Virtual Enterprise student, I've gained a flair for website design and development, which allows me to support my teammates in Fillosophy company to achieve top 50 in Virtual Enterprise International Competition. After graduation, I will attend community college to continue sharping my skills.</li>
+        <br>
+        <li><b style="color:white">What I Do?</b><br> My experiences includes website design, 3D modeling, design, and coding Arduino.</li>
+        <br>
+        <li><b style="color:white">My Goal</b><br>is to increase my personal growth by continue learning. 
+        <br>
+        <br>
+        
+        <li>  This portfolio preparation taught me to become more creative towards the website's features and details.</li>
+    </p>
+    <div class="text">Introduction</div>
+    
+    </div>
+
+    <div class="mySlides fade">
+
+    <a href="Resume/Resume.pdf"><img src="Resume.jpg" height="640" cursor="pointer" class="papers"></a>
+    <div class="text">Resume</div>
+    </div>
+
+    <div class="mySlides fade">
+
+      <a href="Resume/Cover Letter.pdf"><img src="Cover Letter.jpg" height="640" cursor="pointer" class="papers"></a>
+    <div class="text">Cover Letter</div>
+    </div>
+
+    </div>
+    <br>
+
+    <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+</div>
+
+<div class="cursor"></div>
+
+
+<script type="module">
+import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/build/three.module.js';
+import {OBJLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/loaders/OBJLoader.js';
+import {OrbitControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/controls/OrbitControls.js';
+import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/loaders/GLTFLoader.js';
+import {MTLLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/loaders/MTLLoader.js';
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
+
+window.addEventListener('resize', function()
+        {
+            var width=window.innerWidth;
+            var height=window.innerHeight;
+            renderer.setSize(width, height);
+            camera.aspect=width/height;
+            camera.updateProjectionMatrix();
+        });
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0,0,0);
+controls.enableZoom = false;
+controls.update();
+
+renderer.setClearColor (0x222222, 1);
+
+var candle;
+const object = new GLTFLoader();
+object.load('candle.glb', function(gltf) 
+{
+candle = gltf.scene;
+gltf.scene.scale.multiplyScalar(0.3);
+candle.position.set(2,-1.5,0);
+candle.animations;
+scene.add(candle);
+});
+
+const skyColor = 0xB1E1FF;
+const groundColor = 0xB97A20;
+const intensity = 5;
+const light = new THREE.HemisphereLight(skyColor, groundColor, intensity);
+scene.add(light);
+
+camera.position.z = 5;
+
+const animate = function () {
+requestAnimationFrame( animate );
+if (candle) candle.rotation.y += 0.01;
+
+
+renderer.render( scene, camera );
+};
+
+animate();
+</script>
+<script src="script.js"></script>
+<script src="script2.js"></script>
+</body>
+</html> 
