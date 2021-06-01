@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <style>
+            body 
+            {
+                margin:0;
+            }
+            canvas 
+            {
+                width:100%;
+                height:100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <style>
+            *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+}
+body{
+  overflow:hidden;
+}
+
+.scene,
+canvas{
+  position: absolute;
+  width:100%;
+  height:100%;
+  display:block;
+}
+        </style>
+ <script type="module">
+    import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/build/three.module.js';
+    import {OBJLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/loaders/OBJLoader.js';
+    import {OrbitControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/controls/OrbitControls.js';
+    import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/loaders/GLTFLoader.js';
+    import {MTLLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/loaders/MTLLoader.js';
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+    
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
+    
+    window.addEventListener('resize', function()
+            {
+                var width=window.innerWidth;
+                var height=window.innerHeight;
+                renderer.setSize(width, height);
+                camera.aspect=width/height;
+                camera.updateProjectionMatrix();
+            });
+    
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.target.set(0,0,0);
+    controls.enableZoom = false;
+    controls.update();
+    
+    renderer.setClearColor (0xf4f7e1, 0.9);
+    
+    var candle;
+    const object = new GLTFLoader();
+    object.load('name.glb', function(gltf) 
+    {
+    candle = gltf.scene;
+    gltf.scene.scale.multiplyScalar(0.02);
+    candle.position.set(0,0,0);
+    candle.animations;
+    scene.add(candle);
+    });
+    
+    var light=new THREE.PointLight(0xFFFFFF,1);
+    light.position.z = 10;
+    light.position.x = 10;
+    scene.add(light);
+
+    var light1=new THREE.PointLight(0xFFFFFF,2);
+    light1.position.z = 10;
+    light1.position.x = -10;
+    scene.add(light1);
+
+    var light2=new THREE.PointLight(0xFFFFFF,1);
+    light2.position.z = 10;
+    light2.position.y = 10;
+    scene.add(light2);
+
+    var light3=new THREE.PointLight(0xFFFFFF,1);
+    light3.position.z = 10;
+    light3.position.y = -20;
+    scene.add(light3);
+
+
+
+
+    camera.position.z = 5;
+    
+    const animate = function () {
+    requestAnimationFrame( animate );
+
+    
+    
+    renderer.render( scene, camera );
+    };
+    
+    animate();
+    </script>
+    </body>
+</html>
