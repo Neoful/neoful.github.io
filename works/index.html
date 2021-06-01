@@ -1,0 +1,209 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../src/icon.png"/>
+    <link rel="stylesheet" href="style.css">
+    <title> Jenny Pham</title>
+</head>
+<body>
+
+    <script src="script.js"></script>
+    
+    
+    <div class="preload">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </div> 
+    <div class="cursor"></div>
+
+    <nav>
+        <a href="../index.html" class="logo"><img src="../src/icon.png" height="10"></a>
+        <a href="../index.html" id="navBtn">Home</a>
+        <a href="../about/index.html" id="navBtn">About</a>
+        <a href="../works/index.html" id="navBtn" class="active">Work</a>
+    </nav>
+    <canvas id="about" width="240" height="240">
+
+    </canvas>
+
+        <div class="image hover">
+            <img src="cover image/Fillosophy Package.jpg" onclick="divVisibility('Div1');" id="hover"></a>
+            <img src="cover image/threejs.jpg" onclick="divVisibility('Div2');" id="hover"></a>
+            <img src="cover image/IT Training.jpg" onclick="divVisibility('Div3');" id="hover"></a> 
+            <img src="cover image/Information Technology.jpg" onclick="divVisibility('Div4');" id="hover"></a> 
+            <img src="cover image/scanner.jpg" onclick="divVisibility('Div5');" id="hover"></a> 
+            <img src="cover image/Intro To TinkerCad.jpg" onclick="divVisibility('Div6');" id="hover"></a> 
+            <img src="cover image/Acceptable Use Policy (2020-2021).jpg" onclick="divVisibility('Div7');" id="hover"></a> 
+            <img src="cover image/IT Security Plan.jpg" onclick="divVisibility('Div8');" id="hover"></a> 
+            <img src="work/flower (illustrator).png" onclick="divVisibility('Div9');" id="hover"></a> 
+            <img src="work/supremecourt.jpg" onclick="divVisibility('Div10');" id="hover"></a> 
+            <img src="cover image/name tag.jpg" onclick="divVisibility('Div11');" id="hover"></a> 
+            <img src="cover image/In-Track.jpg" onclick="divVisibility('Div12');" id="hover"></a> 
+        </div>
+
+    <div class="response">
+        <div id="Div1" style="display: none;">
+            <div class="pop-up">
+                <button class="btn-pop-up" onclick="divVisibility('')"></button>
+                <iframe src="https://ve-box-light-green.jennypham1.repl.co/" class="object"></iframe>
+                <p id="title">Fillosophy Package</p>
+                <br>
+                <div class="text">
+                Fillosophy Package was created in Blender, a 3D modeling software, and was imported into the website with Three.js. 
+                </div>
+                <a href="https://ve-box-light-green.jennypham1.repl.co/" class="visit">Visit</button></a>
+            </div>
+        </div>
+
+        <div id="Div2" style="display: none;">
+            <div class="pop-up">
+                <button class="btn-pop-up" onclick="divVisibility('')"></button>
+                <iframe src="https://threejs.jennypham1.repl.co/" class="object"></iframe>
+                <p id="title">Experiment: Threejs</p>
+                <br>
+                <div class="text">
+                This was my experiements with an interactive Threejs and a 3D library. To interact with the website: click the screen, move the camera with the mouse, and move by using the keyboard (w, s, a, d).
+                </div>
+                <a href="https://threejs.jennypham1.repl.co/" class="visit">Visit</button></a>
+            </div>
+        </div>
+
+        <div id="Div3" style="display: none;">
+            <div class="pop-up">
+                <button class="btn-pop-up" onclick="divVisibility('')"></button>
+                <a class="object"><img src="cover image/IT Training.jpg"></a>
+                <p id="title">Magazine & Logo Training Slide</p>
+                <br>
+                <div class="text">
+                I worked alongside with the IT department to teach the other departments how to use Adoble Illustrator, Photoshop, and Canva.
+                </div>
+                <a href="work/Magazine&LogoTraining.pdf" class="visit">Visit</button></a>
+            </div>
+        </div>
+        <div id="Div4" style="display: none;">
+            <div class="pop-up">
+                <button class="btn-pop-up" onclick="divVisibility('')"></button>
+                <a class="object"><img src="cover image/Information Technology.jpg"></a>
+                <p id="title">Information Techology Slide</p>
+                <br>
+                <div class="text">
+                My IT team and I worked on a slide that shows what we've achieved, and taught other departments to be alert of possible phishers.
+                </div>
+                <a href="work/Information Technology.pdf" class="visit">Visit</button></a>
+            </div>
+        </div>
+        <div id="Div5" style="display: none;">
+            <div class="pop-up">
+                <button class="btn-pop-up" onclick="divVisibility('')"></button>
+                <video class="object" controls muted><source src="work/scanner.mp4" type="video/mp4"></video>
+                <p id="title">Changing Colors</p>
+                <br>
+                <div class="text">
+                    This is a Contact Image Sensor, or paper scanner, from a printer that I connected to an Arduino, which I experimented with and changed its LEDs. This experience taught me to be more resourceful.
+                </div>
+            </div>
+        </div>
+        <div id="Div6" style="display: none;">
+            <div class="pop-up">
+                <button class="btn-pop-up" onclick="divVisibility('')"></button>
+                <a class="object"><img src="cover image/Intro To TinkerCad.jpg"></a>
+                <p id="title">Intro To TinkerCad Slide</p>
+                <br>
+                <div class="text">
+                    This slide was created to help Fillosophy departments to learn how to use TinkerCad, an easy-to-use 3D modeling website.
+                </div>
+                <a href="work/Intro To TinkerCad.pdf" class="visit">Visit</button></a>
+            </div>
+        </div>
+        <div id="Div7" style="display: none;">
+            <div class="pop-up">
+                <button class="btn-pop-up" onclick="divVisibility('')"></button>
+                <a class="object"><img src="cover image/Acceptable Use Policy (2020-2021).jpg"></a>
+                <p id="title">Acceptable Use Policy (2020-2021)</p>
+                <br>
+                <div class="text">
+                This comprehensive policy helps Fillosophy by ensuring that all employees understood the agreement of any Fillosophy's safety practices and access agreements.
+                </div>
+                <a href="work/Acceptable Use Policy (2020-2021).pdf" class="visit">Visit</button></a>
+            </div>
+        </div>
+        <div id="Div8" style="display: none;">
+            <div class="pop-up">
+                <button class="btn-pop-up" onclick="divVisibility('')"></button>
+                <a class="object"><img src="cover image/IT Security Plan.jpg"></a>
+                <p id="title">IT Security Plan (2020/2021)</p>
+                <br>
+                <div class="text">
+                The security plan helps ensure the safety of Fillosophy from cyberattacks and safekeeping sensitive pieces of information.
+                </div>
+                <a href="work/IT Security Plan (2020_2021).pdf" class="visit">Visit</button></a>
+            </div>
+        </div>
+        <div id="Div9" style="display: none;">
+            <div class="pop-up">
+                <button class="btn-pop-up" onclick="divVisibility('')"></button>
+                <a class="object"><img src="work/flower (illustrator).png"></a>
+                <p id="title">Flower</p>
+                <br>
+                <div class="text">
+                A flower that was created in Adoble Illustrator was used as an simple example for Fillosophy employees to follow.
+                </div>
+            </div>
+        </div>
+        <div id="Div10" style="display: none;">
+            <div class="pop-up">
+                <button class="btn-pop-up" onclick="divVisibility('')"></button>
+                <iframe src="work/supremecourt/index.html" class="object"></iframe>
+                <p id="title">Supremecourt (incomplete)</p>
+                <br>
+                <div class="text">
+                    This 3D model was created with Blender with its detailed pillars and cornices, while I learned to use Blender, a 3D modeling software. 
+                </div>
+                <a href="work/supremecourt/index.html" class="visit">Visit</button></a>
+            </div>
+        </div>
+        <div id="Div11" style="display: none;">
+            <div class="pop-up">
+                <button class="btn-pop-up" onclick="divVisibility('')"></button>
+                <iframe src="work/name tag/index.html" class="object"></iframe>
+                <p id="title">Name Tag</p>
+                <br>
+                <div class="text">
+                    The elegant name tag shaped like a diamond with a coral on top was created with TinkerCad, an easy-to-use 3D model website. TinkerCad is helpful for beginners new to 3D modeling.
+                </div>
+                <a href="work/name tag/index.html" class="visit">Visit</button></a>
+            </div>
+        </div>
+        <div id="Div12" style="display: none;">
+            <div class="pop-up">
+                <button class="btn-pop-up" onclick="divVisibility('')"></button>
+                <a class="object"><img src="cover image/In-Track.jpg"></a>
+                <p id="title">IN-TRACK Investor Slide</p>
+                <br>
+                <div class="text">
+                    The IN-TRACK group's goal was to invent a product that could solve the problem of lost medical instruments, then present a possible solution and pitch it to investors. I've gained public speaking skills, planning, and teamwork while doing this project.
+                </div>
+                <a href="work/IN-TRACK Presentation.pdf" class="visit">Visit</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bubbles bubble-1"></div>
+    <div class="bubbles bubble-5"></div>
+    <div class="bubbles bubble-2"></div>
+    <div class="bubbles bubble-6"></div>
+    <div class="bubbles bubble-3"></div>
+    <div class="bubbles bubble-7"></div>
+    <div class="bubbles bubble-4"></div>
+    <div class="bubbles bubble-8"></div>
+    <div class="bubbles bubble-9"></div>
+    <div class="bubbles bubble-10"></div>
+    <div class="bubbles bubble-11"></div>
+    <div class="bubbles bubble-12"></div>
+    <script src="script2.js"></script>
+</body>
